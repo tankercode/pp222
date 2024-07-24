@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+
+<H1> Cars list </H1>
+
+<table>
+
+    <tr>
+        <th>model</th>
+        <th>series</th>
+        <th>color</th>
+    </tr>
+
+    <tr th:each="car : ${cars}">
+        <td th:utext="${car.getModel()}">   model</td>
+        <td th:utext="${car.getSeries()}">  series</td>
+        <td th:utext="${car.getColor()}">   color</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
