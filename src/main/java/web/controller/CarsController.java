@@ -21,15 +21,11 @@ public class CarsController {
     public String getCars(HttpServletRequest request, Model model) {
 
         if (request.getParameter("count") != null) {
-
-            model.addAttribute(
-                    "cars",
-                    carService.getCars(
-                            Integer.parseInt(
-                                    request.getParameter("count"))));
-
+            model.addAttribute("cars",
+                    carService.getCars(Integer.parseInt(request.getParameter("count"))));
         } else {
-            model.addAttribute("cars", carService.getAllCars());
+            model.addAttribute("cars",
+                    carService.getAllCars());
         }
 
         return "cars";

@@ -1,23 +1,20 @@
-package web.services;
+package web.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import web.models.User;
-import web.repositories.UsersRepository;
+import web.model.User;
+import web.repository.UsersRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class UsersService {
 
-    private UsersRepository usersRepository;
-
-    @Autowired
-    public UsersService(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
-    }
+    private final UsersRepository usersRepository;
 
     public List<User> findAll() {
         return usersRepository.findAll();

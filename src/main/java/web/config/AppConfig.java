@@ -20,7 +20,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:hibernate.properties")
-@EnableJpaRepositories("web.repositories")
+@EnableJpaRepositories("web.repository")
 @EnableTransactionManagement
 @ComponentScan(value = "web")
 public class AppConfig {

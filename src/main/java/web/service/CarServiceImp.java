@@ -1,31 +1,32 @@
 package web.service;
 
-import org.springframework.stereotype.Component;
-import web.dao.CarDao;
+import org.springframework.stereotype.Service;
 import web.model.Car;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class CarServiceImp implements CarService{
 
-    private CarDao carDao;
+    private List<Car> cars = new ArrayList<>();
 
-    public CarServiceImp(CarDao carDao) {
-        this.carDao = carDao;
+    {
+        cars.add(new Car("qwer",1, "q"));
+        cars.add(new Car("qwerr",2, "w"));
+        cars.add(new Car("qwerrr",3, "e"));
+        cars.add(new Car("qwerrrr",4, "r"));
+        cars.add(new Car("qwerrrrr",5, "t"));
     }
 
     @Override
     public List<Car> getCars(int count) {
-        // обрабатываем то что достали из базы
-
-        // обрабатываем то что достали из заглушки бд
-        return carDao.getCars(count);
+        return cars.stream().limit(count).toList();
     }
 
     @Override
     public List<Car> getAllCars() {
-        return carDao.getAllCars();
+        return cars;
     }
 
 

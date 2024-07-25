@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.models.User;
-import web.services.UsersService;
+import web.model.User;
+import web.service.UsersService;
 
 @Controller
 public class UserController {

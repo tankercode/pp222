@@ -1,4 +1,4 @@
-package web.models;
+package web.model;
 
 import lombok.Getter;
 import lombok.Setter;
